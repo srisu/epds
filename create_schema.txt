@@ -1,0 +1,5 @@
+create table login_user (name varchar(100),mobile_number varchar(10),password varchar(25),ration_id varchar(12),aadhar_no varchar(12),is_admin varchar(1),primary key (mobile_number));
+
+create table epds_products (prod_id int auto_increment,prod_name varchar(50),prod_selling varchar(10),prod_stock int, primary key(prod_id,prod_name));
+
+create table images_tbl (images_id int auto_increment,images_path varchar(100),images_name varchar(100),primary key(images_id));
