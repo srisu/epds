@@ -40,6 +40,7 @@ $rowprod = mysqli_fetch_object($sqlprod);
 <!--!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!==-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/tables.css">
 <!--!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!==-->
 <title>ePds Admin</title>
 </head>
@@ -57,18 +58,18 @@ $rowprod = mysqli_fetch_object($sqlprod);
 						</button>
 					</div>
 		</form>
-		
-		
+				
 		
 		<div class="divLeft p-t-190 p-b-30">
 				<form class="login100-form validate-form" id="form1" method="POST">
 				<?php
-										$result = mysqli_query($db,"SELECT  prod_name as name, ' ', prod_selling as selling, ' ', prod_stock as stock FROM epds_products");
+										$result = mysqli_query($db,"SELECT  prod_name as name, prod_selling as selling,  prod_stock as stock FROM epds_products");
 $all_property = array();  
 $i=1;
 //showing property
-echo '<table class="data-table">
-        <tr class="data-heading">';  //initialize table tag
+
+echo '<table>
+        <tr>';  //initialize table tag
 		
  
 while ($property = mysqli_fetch_field($result)) {
