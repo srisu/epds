@@ -66,7 +66,8 @@ include("include/config.php");
 		  
 		  $outmsg = "Product Save Success";
 		  echo "<script>alert('Product Save Success');</script>";
-		  //header("Refresh: 0; url= admindash.php");
+		  
+		  header("Refresh: 0; url= admindash.php");
 
 		}
 		

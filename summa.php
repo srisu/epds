@@ -1,15 +1,15 @@
-<?php
-include("include/config.php");
+<html lang="en">
+<head>
+    <title>Change image on select new image from file input</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+</head>
+<body>
+<select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
 
-$select_imgquery = "SELECT images_path FROM  images_tbl limit 1";
-
-$select_prod = "SELECT prod_name FROM  epds_products";
-
-
-$sqlimg = mysqli_query($db,$select_imgquery);
-//echo $sqlimg;
-if ('$sqlimg' == 'FALSE')
-{echo "I am in";}
-else 
-{echo "ahaan";}
-?>
+</body>
+</html>

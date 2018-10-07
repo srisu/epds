@@ -1,7 +1,42 @@
 
 table {
     border-spacing: 5px;
+	border: 1px solid black;
+	padding: 15px;
+	text-align: center;
 	width: 100%; 
-    background-color: #f1f1c1;
+	width: 1000px;
 
 }
+
+tr{
+	background-color: #596577;
+	border: solid 1px black;
+	font-family: Montserrat-Bold;
+    font-size: 15px;
+		}
+tr:hover {
+	background-color: #4286f4;
+	border: solid 1px black;
+	font-family: Helvetica;
+    font-size: 20px;
+	/*transform: scale(0.8);*/
+		}
+th {
+	height: 50px;
+	text-align: center;
+	color: #e0e0e0;
+	font-family: Montserrat-Bold;
+    font-size: 15px;
+    border-bottom: 1px solid black;
+	border-bottom: 1px solid black;
+	text-transform: capitalize;
+	background-color: #333333;
+	}
+		
+td{
+border-left: solid 1px black;
+height: 150px;
+font-family: Montserrat-Bold;
+    font-size: 15px;
+} 

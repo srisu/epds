@@ -7,14 +7,14 @@
    {
 	   
       // username and password sent from form 
-      
+      $type = mysqli_real_escape_string($db,$_POST['seltype']);
       $mobil = mysqli_real_escape_string($db,$_POST['mobilenumber']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']);
 	  $usrname = mysqli_real_escape_string($db,$_POST['username']);
 	  $aadhar = mysqli_real_escape_string($db,$_POST['anumber']);
 	  $rnumber = mysqli_real_escape_string($db,$_POST['rnumber']);
 	  
-	  $sqlins = "insert into login_user (name,mobile_number,password,ration_id,aadhar_no) values ('$usrname','$mobil','$mypassword','$rnumber','$aadhar')";
+	  $sqlins = "insert into login_user (name,mobile_number,password,ration_id,aadhar_no,is_admin,type) values ('$usrname','$mobil','$mypassword','$rnumber','$aadhar','N','$type')";
 	  
 	  $sqlmobile = "select name  from login_user where mobile_number='$mobil'";
 	  $sqlaadhar = "select name  from login_user where aadhar_no='$aadhar'";
@@ -155,6 +155,26 @@ echo "<script>alert('Your registation is successful');</script>";
 							<i class="fa fa-mobile-phone"></i>
 						</span>
 					</div>
+
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Aadhar No. is required">
+						
+						
+<select class="input101" name="seltype" required>
+ 
+    <option selected disabled hidden>Choose the card type</option>
+    <option  style="color:green" value="green">Green Card</option>
+    <option style="color:#C2B280"  value="Khaki">Khaki Card</option>
+    <option style="color:blue" value="blue">Blue Card</option>
+    <option style="color:white" value="white">White Card</option>
+    <option style="color:white" value="whitenc">White Card - No Commodity</option>
+
+</select>
+<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-mobile-phone"></i>
+						</span>
+
+			</div>
 
 
 					<div class="container-login100-form-btn p-t-10" >

@@ -1,5 +1,6 @@
 <?php
    include("include/config.php");
+   ini_set('session.use_trans_sid', false);
    session_start();
    
      if(isset($_POST['login'])) {
@@ -43,13 +44,15 @@
          
          //You need to redirect
 		 
-		 if ("$rowisadmin->is_admin" == '1')
+		 if ("$rowisadmin->is_admin" == 'Y')
 		 {
-		 echo "adhu nane";
+		 //echo "adhu nane";
 		 header("location: admindash.php");
 		 }
 		else 
-		header("location: home.php");	
+		{
+			$_SESSION["usrmob"] = "$mobil";
+		header("location: default.php");	}
 
 	 }
 	  
@@ -104,7 +107,7 @@ echo "<script>alert('Entered Mobile Number is not registered, please signup to c
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
-<title>Welcome to ePds</title>
+<title>Login to ePds</title>
 </head>
 <body>
 	<!-- user login form -->

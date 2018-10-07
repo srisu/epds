@@ -27,6 +27,9 @@
 		<div class="container-login101" style="background-image: url('images/img-01.jpg');">
 				<div class="topright");">
 		<img src="images/epds.png" alt="AVATAR" height="100px" width="100px">
+		<span class="login100-form-title">
+						<a class="login102-form-title" href='admindash.php'>Back to admin</a>
+					</span>
 		</div> 
 		<!--<div class="wrap-login100 p-t-190 p-b-30">			
 		<form class="login100-form validate-form" id="form1" method="POST">	
@@ -52,26 +55,19 @@
 		
 		</div>		
 		</div>-->
-		<script type="text/javascript">
-var value = parseInt(document.getElementById("pstock"));
-
-if(isNaN(value)){
-    value = 0;
-}
-</script>
-		<form action="saveimage.php" enctype="multipart/form-data" method="post">
+		<form action="saveimage.php"  enctype="multipart/form-data" method="post">
 		<span class="login100-form-title p-t-20 p-b-45">
 						Add New Product
 					</span>
 <div class="wrap-input100 validate-input m-b-10" data-validate = "Mobile No. is required">
-						<input id="mobilenumber" class="input100" type="text" name="pname" placeholder="Product Name">
+						<input id="mobilenumber" class="input100" type="text" name="pname" placeholder="Product Name" required>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-mobile-phone"></i>
 						</span>
 					</div>
 <div class="wrap-input100 validate-input m-b-10" data-validate = "Mobile No. is required">
-						<input id="mobilenumber" class="input100" type="number" name="pselling" placeholder="Selling Price">
+						<input id="mobilenumber" class="input100" type="number" name="pselling" placeholder="Selling Price" required>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-mobile-phone"></i>
@@ -79,7 +75,7 @@ if(isNaN(value)){
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-10" data-validate = "Mobile No. is required">
-						<input id="pstock" class="input100" type="number" name="pstock" placeholder="Stock">
+						<input id="pstock" class="input100" type="number" name="pstock" placeholder="Stock" required>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-mobile-phone"></i>

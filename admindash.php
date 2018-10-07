@@ -49,6 +49,9 @@ $rowprod = mysqli_fetch_object($sqlprod);
 		<div class="container-login101" style="background-image: url('images/img-01.jpg');">
 				<div class="topright">
 		<img src="images/epds.png" alt="AVATAR" height="100px" width="100px">
+		<span class="login100-form-title">
+						<a class="login102-form-title" href='logout.php'>Logout</a>
+					</span>
 		</div>
 
 		<form class="login100-form" id="addprodf" method="POST">
@@ -56,25 +59,36 @@ $rowprod = mysqli_fetch_object($sqlprod);
 						<button name="addprod" class="login101-form-btn" height="100px" width="100px">
 							Add Product
 						</button>
-					</div>
+		</div>
 		</form>
-				
+		<form class="login100-form" action="userlist.php" id="usrlist" method="POST">
+		<div class="container-login100-form-btn p-t-10">
+						<button name="usrlist" class="login101-form-btn" height="100px" width="100px">
+							User List
+						</button>
+					</div>
 		
-		<div class="divLeft p-t-190 p-b-30">
-				<form class="login100-form validate-form" id="form1" method="POST">
+		</form>
+<span class="login100-form-title p-t-20 p-b-45">
+						Product List
+					</span>		
+		<div style="width:1000px; height:500px; overflow: auto; overflow-x: hidden;" >
+		
+
+		<!----<div class="divLeft p-t-190 p-b-30">
+				<form class="login100-form validate-form" id="form1" method="POST">--->
 				<?php
-										$result = mysqli_query($db,"SELECT  prod_name as name, prod_selling as selling,  prod_stock as stock FROM epds_products");
+										$result = mysqli_query($db,"SELECT  prod_name as name, prod_selling as selling,  prod_stock as stock, images_path as preview FROM epds_products left join images_tbl on prod_id=images_id; ");
 $all_property = array();  
 $i=1;
 //showing property
-
 echo '<table>
         <tr>';  //initialize table tag
 		
- 
+ $i=1;
 while ($property = mysqli_fetch_field($result)) {
-    echo '<td>' . $property->name . '</td>';  //get field name for header
-	//echo '<td>' . $i .'</td>';
+    echo '<th>' . $property->name . '</th>';  //get field name for header
+	
  
     array_push($all_property, $property->name);  //save those to array
 }
@@ -84,21 +98,30 @@ echo '</tr>'; //end tr tag
 while ($row = mysqli_fetch_array($result)) {
     echo "<tr>";
     foreach ($all_property as $item) {
+		if (($i%4)==0)
 		
-        echo '<td>' . $row[$item] . '</td>'; //get items using property value
+        echo '<td><img src="' . $row[$item] . '" class="imgcircle" width="150px" height="100px"></td>'; //get items using property value
+		else
+			echo '<td>' . $row[$item] . '</td>'; //get items using property value
+			//echo $i;
 		
+		$i=$i+1;
     }
-	echo '<td>' . $i .'</td>';
-    echo '</tr>';
-	$i+1;
+	    echo '</tr>';
+		
+	
 }
 echo "</table>";
 ?>
-</form>
-					</div></div></body>
+
+<!--</form>-->
+					</div>
+
+</div></body>
 					</html>
 
 	
+
 
 
 
